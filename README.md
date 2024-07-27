@@ -6,8 +6,7 @@ Brief available here: [link](https://www.theodinproject.com/lessons/foundations-
 - Basic operations: add, subtract, multiplication and division.
 - Floating point number support. Foats prepended with a 0 by default.
 - Percentage function.
-- Negate displayed value function.
-- Indices and square root function.
+- Square root function.
 - Backspace to clear previous entry.
 - AC to clear calculator.
 - Keyboard support.
