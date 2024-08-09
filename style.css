@@ -5,16 +5,10 @@
 }
 
 :root {
-    --main-bg-color: #949494;
-    --btn-primary-color: #ae280b;
-    --btn-primary-color-hover: #7A1C07;
-    --btn-secondary-color: #b8b8b8;
-    --btn-secondary-color-hover: #858585;
-    --btn-danger-color: #353535;
-    --btn-danger-color-hover: #141414;
-    --btn-transition: 100ms;
-    --screen-bg-color: #1f1f1f;
-    --screen-color: #ae280b;
+    --main-bg-color: #242424;
+    --primary-color: #fafafa;
+    --secondary-color: #ffd272;
+    --btn-transition: 500ms;
 }
 
 body {
@@ -42,17 +36,16 @@ body {
     width: 100%;
     height: 200px;
     background: var(--main-bg-color);
-    border-top: 1px solid var(--btn-danger-color);
+    border-top: 1px solid var(--primary-color);
 }
 
 #calculator {
     width: 375px;
     height: 600px;
     background-color: var(--main-bg-color);
-    border: 1px solid #7b7b7b;
+    border: 1px solid var(--primary-color);
     border-radius: 1em;
-    padding: 40px;
-    box-shadow: 10px 10px 50px #7b7b7b;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -81,17 +74,18 @@ body {
 #screen {
     height: 100px;
     width: 100%;
-    background: var(--screen-bg-color);
-    color: var(--screen-color);
+    color: var(--secondary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 0.1em;
     display: flex;
     justify-content: end;
     align-items: center;
     text-transform: uppercase;
     font-family: "Seven Segment";
     letter-spacing: 1px;
-    font-size: 55px;
+    font-size: 50px;
     padding: 0 10px;
-    border-radius: 0.1em;
+    
 }
 
 #buttons {
@@ -103,41 +97,36 @@ body {
 
 .btn {
     aspect-ratio: 1 / 1;
-    border: none;
     border-radius: 0.4em;
-    text-transform: uppercase;
     font-size: 1em;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 2px 2px 2px #191919;
+    background: none;
+    transition: var(--btn-transition);
+}
+
+.btn:hover {
+    cursor: pointer;
 }
 
 .btn.btn-primary {
-    background-color: var(--btn-primary-color);
-    color: white;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
 }
 
-.btn.btn-primary:active {
-    background-color: var(--btn-primary-color-hover);
-    transition: var(--btn-transition);
+.btn.btn-primary:hover {
+    color: var(--main-bg-color);
+    background-color: var(--primary-color);
+    
 }
 
 .btn.btn-secondary {
-    background-color: var(--btn-secondary-color);
+    color: var(--primary-color);
+    border: 1px solid var(--secondary-color);
 }
 
-.btn.btn-secondary:active {
-    background-color: var(--btn-secondary-color-hover);
-    transition: var(--btn-transition);
-}
-
-.btn.btn-danger {
-    background-color: var(--btn-danger-color);
-    color: white;
-}
-
-.btn.btn-danger:active {
-    background-color: var(--btn-danger-color-hover);
-    transition: var(--btn-transition);
+.btn.btn-secondary:hover {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
 }
