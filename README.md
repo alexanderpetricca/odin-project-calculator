@@ -1,13 +1,12 @@
 # The Odin Project: Calculator
-A calculator built with HTML, CSS and JS.
+A calculator built with HTML, CSS and vanilla JS.
 Brief available here: [link](https://www.theodinproject.com/lessons/foundations-calculator)
 
 ## Calculator
 - Basic operations: add, subtract, multiplication and division.
-- Floating point number support. Foats prepended with a 0 by default.
+- Floating point number support.
+- Switch positive / negative number function.
 - Percentage function.
-- Square root function.
-- Backspace to clear previous entry.
 - AC to clear calculator.
-- Keyboard support.
-- User selectable themes.
+- Keyboard support. (coming soon)
+- User selectable themes. (coming soon)
