@@ -2,49 +2,72 @@
 
 
 const buttons = document.querySelectorAll('.btn')
-const screen = document.querySelector('#screen')
 
-let buffer = '0'
-let operator = null
+let displayValue = '0';
 const operators = ['+', '-', '*', '/']
+let x = null;
+let y = null;
+let operator = null;
 
 
-function keyPress() {    
-    const btnValue = this.value;
-    const screenLen = screen.textContent.length + 1;
-    
-    if (btnValue === 'ac') {
-        allClear()
-    } else if (btnValue === 'c') {
-        clear()
-    } else if (btnValue === '=') {
-        operate()
-    } else {
-        buttonPress(btnValue, screenLen)
+buttons.forEach((button) => {
+    button.addEventListener('click', btnPress);
+})
+
+
+function updateScreen() {
+    const screen = document.querySelector('#screen');    
+    screen.textContent = displayValue;
+
+    if (displayValue.length > 11) {
+        screen.textContent = displayValue.substring(0, 11);
     }
 }
 
 
-function buttonPress(value, screenLen) {
+function btnPress() {    
+    const btnValue = this.value;
+    
+    if (btnValue === 'ac') {
+        allClear()
+    } else if (operators.includes(btnValue)) {
+        operandInput(btnValue)
+    } else if (btnValue === '=') {
+        operate()
+    } else {
+        numberInput(btnValue)
+    }
+}
 
-    // Needs logic to prevent adding operator to empty buffer
 
-    if (screenLen < 11) {
-        if (buffer === '0') {
-            buffer = value;
-        } else {
-            if (operators.includes(value)) {
-                operator = value
-            }
-            buffer += value;
-        }
+function numberInput(value) {
+
+    if (displayValue === '0') {
+        displayValue = value;
+    } else if (x) { // !! Last major issue is detecting whether inputting second operand, and allowing it be entered.
+        displayValue = value; 
+    } else {
+        displayValue += value;
     }
     updateScreen()
 }
 
 
-function updateScreen() {
-    screen.textContent = buffer
+function operandInput(value) {
+    operator = value
+    x = Number(displayValue)
+}
+
+
+/**
+ * Clears the stored values of x, y, operator and resets the screen to 0.
+ */
+function allClear() {
+    displayValue = '0'
+    x = 0
+    y = 0
+    operator = null
+    updateScreen()
 }
 
 
@@ -84,43 +107,9 @@ function divide(x, y) {
 }
 
 
-/**
- * Clears the stored values of x, y, operator and resets the screen to 0.
- */
-function allClear() {
-    buffer = '0'
-    x = 0
-    y = 0
-    operator = null
-    updateScreen()
-}
-
-
-function clear(){
-    buffer = buffer.substring(0, buffer.length - 1)
-    if (buffer === '') {
-        buffer = '0'
-    }
-    updateScreen()
-}
-
-
 function operate() {
 
-    // Improve this algorithm, to be more reliable:
-    // - needs to work without spaces.
-    // - needs to store the numbers in variables, rathan than split, I think.
-    // - needs to only allow one operator.
-    // - needs to ensure an operator is not added first, without a number.
-    
-    let components = [buffer];
-    
-    operators.forEach(operator => {
-        components = components.flatMap(subStr => subStr.split(operator))
-    })
-
-    let x = Number(components[0])
-    let y = Number(components[1])
+    y = Number(displayValue)
     
     let result = 0
 
@@ -137,11 +126,6 @@ function operate() {
         result = divide(x, y)
     }
 
-    buffer = result.toString().slice(0, 11)
+    displayValue = result.toString()
     updateScreen()
 }
-
-
-buttons.forEach((button) => {
-    button.addEventListener('click', keyPress);
-})
