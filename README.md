@@ -9,4 +9,4 @@ Brief available here: [link](https://www.theodinproject.com/lessons/foundations-
 - Percentage function.
 - AC to clear calculator.
 - Keyboard support. (coming soon)
-- User selectable themes. (coming soon)
+- User selectable themes.

@@ -1,10 +1,11 @@
 // https://www.theodinproject.com/lessons/foundations-calculator
 
 
-const buttons = document.querySelectorAll('.btn')
+const buttons = document.querySelectorAll('.calc-btn')
 const screen = document.querySelector('#screen');  
 
 let displayValue = null;
+screen.textContent = '0'
 const operators = ['+', '-', '*', '/', 'p']
 let x = null;
 let y = null;
@@ -15,8 +16,6 @@ let awaitingY = false;
 buttons.forEach((button) => {
     button.addEventListener('click', btnPress);
 })
-
-screen.textContent = '0'
 
 
 function updateScreen() {
@@ -45,7 +44,6 @@ function btnPress() {
 
 
 function numberInput(value) {
-
     if (displayValue === null || awaitingY) {
         displayValue = value;
     } else {
@@ -163,4 +161,13 @@ function operate() {
 
     displayValue = result.toString();
     updateScreen();
+}
+
+
+function changeTheme(backgroundColor, primaryColor, secondaryColor) {
+    var root = document.querySelector(':root');    
+    
+    root.style.setProperty('--main-bg-color', backgroundColor);
+    root.style.setProperty('--primary-color', primaryColor);
+    root.style.setProperty('--secondary-color', secondaryColor);
 }
