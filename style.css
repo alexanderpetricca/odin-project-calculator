@@ -8,7 +8,7 @@
     --main-bg-color: #242424;
     --primary-color: #fafafa;
     --secondary-color: #ff693c;
-    --btn-transition: 500ms;
+    --transition-time: 500ms;
 }
 
 body {
@@ -20,6 +20,7 @@ body {
     font-size: 18px;
     color: #3b3b3b;
     font-family: Helvetica, sans-serif;
+    transition: var(--transition-time);
 }
 
 
@@ -100,7 +101,7 @@ body {
     justify-content: center;
     align-items: center;
     background: none;
-    transition: var(--btn-transition);
+    transition: var(--transition-time);
 }
 
 .btn-dbl {

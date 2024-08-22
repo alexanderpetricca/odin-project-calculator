@@ -8,5 +8,5 @@ Brief available here: [link](https://www.theodinproject.com/lessons/foundations-
 - Switch positive / negative number function.
 - Percentage function.
 - AC to clear calculator.
-- Keyboard support. (coming soon)
+- Keyboard support.
 - User selectable themes.

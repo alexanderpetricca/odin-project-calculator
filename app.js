@@ -1,44 +1,53 @@
 // https://www.theodinproject.com/lessons/foundations-calculator
 
 
-const buttons = document.querySelectorAll('.calc-btn')
+
 const screen = document.querySelector('#screen');  
 
 let displayValue = null;
-screen.textContent = '0'
-const operators = ['+', '-', '*', '/', 'p']
+screen.textContent = '0';
+const operators = ['+', '-', '*', '/', 'p'];
+const keys = [
+    '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '=', 's', 'c',
+];
+const permittedKeys = keys + operators
 let x = null;
 let y = null;
 let operator = null;
 let awaitingY = false;
 
 
+const buttons = document.querySelectorAll('.calc-btn');
+
 buttons.forEach((button) => {
-    button.addEventListener('click', btnPress);
+    button.addEventListener('click', () => {
+        btnPress(button.value);
+    });
+})
+
+addEventListener("keydown", (event) => {
+    let value = event.key;
+    if (event.key === 'Enter') {
+        value = '=';
+    }
+    btnPress(value);
 })
 
 
-function updateScreen() {
-    screen.textContent = displayValue;
-    if (displayValue.length > 11) {
-        screen.textContent = displayValue.substring(0, 11);
-    }
-}
+function btnPress(value) {    
 
-
-function btnPress() {    
-    const btnValue = this.value;
-    
-    if (btnValue === 'c') {
-        allClear();
-    } else if (operators.includes(btnValue)) {
-        operandInput(btnValue);
-    } else if (btnValue === 's') {
-        switchValue();
-    } else if (btnValue === '=') {
-        operate();
-    } else {
-        numberInput(btnValue);
+    if (permittedKeys.includes(value)) {
+        if (value === 'c') {
+            allClear();
+        } else if (operators.includes(value)) {
+            operandInput(value);
+        } else if (value === 's') {
+            switchValue();
+        } else if (value === '=') {
+            operate();
+        } else {
+            numberInput(value);
+        }
     }
 }
 
@@ -59,9 +68,17 @@ function operandInput(value) {
     x = Number(displayValue);
 
     if (operator == 'p') {
-        operate()
+        operate();
     } else {
         awaitingY = true;
+    }
+}
+
+
+function updateScreen() {
+    screen.textContent = displayValue;
+    if (displayValue.length > 11) {
+        screen.textContent = displayValue.substring(0, 11);
     }
 }
 
@@ -129,9 +146,9 @@ function percentage(x) {
  */
 function switchValue() {
     if (displayValue[0] === '-') {
-        displayValue = displayValue.slice(1)
+        displayValue = displayValue.slice(1);
     } else {
-        displayValue = '-' + displayValue
+        displayValue = '-' + displayValue;
     }
     updateScreen()
 }
