@@ -1,0 +1,159 @@
+
+@font-face {
+    font-family: "Seven Segment";
+    src: url(../fonts/Seven-Segment.ttf);
+}
+
+:root {
+    --main-bg-color: #242424;
+    --primary-color: #fafafa;
+    --secondary-color: #ff693c;
+    --transition-time: 0ms;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100dvh;
+    background: var(--main-bg-color);
+    font-size: 18px;
+    font-family: Helvetica, sans-serif;    
+}
+
+#main-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+
+    #calc-container {
+        min-width: 320px;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        background-color: var(--main-bg-color);
+        border: 1px solid var(--primary-color);
+        border-radius: 0.5em;
+        padding: 30px 20px;
+
+        #screen {
+            width: 100%;
+            height: 75px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background-color: rgb(57, 57, 57);
+            margin-bottom: 20px;
+            padding: 0 10px;                                
+            border: 1px solid var(--primary-color);  
+            border-radius: 0.1em;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            font-family: "Seven Segment";
+            letter-spacing: 1px;
+            font-size: 50px;
+        }
+    }
+
+    .btn-container {
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+
+        .btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            aspect-ratio: 1 / 1;
+            width: 100%;
+            border-radius: 0.5em;
+            background-color: var(--main-bg-color);
+            
+            &:hover {
+                cursor: pointer;
+            }
+            
+            &.btn-primary {
+                color: var(--primary-color);
+                border: 1px solid var(--primary-color);
+
+                &:hover {
+                    color: var(--main-bg-color);
+                    background-color: var(--primary-color);
+                    
+                }                    
+            }
+
+            &.btn-secondary {
+                color: var(--primary-color);
+                border: 1px solid var(--secondary-color);
+
+                &:hover {
+                    color: var(--main-bg-color);
+                    background-color: var(--secondary-color);
+                    
+                }                    
+            }                
+        }
+    }   
+    
+    #theme-select {
+        min-width: 320px;
+        height: 80px;
+        background-color: var(--main-bg-color);
+        border: 1px solid var(--primary-color);
+        border-radius: 0.5em;
+        padding: 10px 20px;
+
+        .btn-container {
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        
+        /* Theme 1 */
+        button.theme-1 {
+            background:linear-gradient(to bottom right, transparent calc(50% - 1px), #ff693c calc(50% - 1px), #ff693c, transparent 50%);
+            
+            &:hover {
+                background: #ff693c;
+            }            
+        }
+
+        /* Theme 2 */
+        button.theme-2 {
+            background:linear-gradient(to bottom right, transparent calc(50% - 1px), #128cb4 calc(50% - 1px), #128cb4, transparent 50% ) #dcdcda;
+
+            &:hover {
+                background: #128cb4;
+            }
+        }
+
+        /* Theme 3 */
+        button.theme-3 {
+            background:linear-gradient(to bottom right, transparent calc(50% - 1px), #29E37D calc(50% - 1px), #29E37D, transparent 50% );
+            
+            &:hover {
+                background: #29E37D;
+            }             
+        }        
+
+        /* Theme 4 */
+        button.theme-4 {
+            background:linear-gradient(to bottom right, transparent calc(50% - 1px), #FDB833 calc(50% - 1px), #FDB833, transparent 50% );
+            
+            &:hover {
+                background: #FDB833;
+            }            
+        }
+    }
+}

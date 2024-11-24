@@ -1,0 +1,136 @@
+@font-face {
+  font-family: "Seven Segment";
+  src: url(../fonts/Seven-Segment.ttf);
+}
+:root {
+  --main-bg-color: #242424;
+  --primary-color: #fafafa;
+  --secondary-color: #ff693c;
+  --transition-time: 0ms;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100dvh;
+  background: var(--main-bg-color);
+  font-size: 18px;
+  font-family: Helvetica, sans-serif;
+}
+
+#main-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 30px;
+}
+#main-container #calc-container {
+  min-width: 320px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: var(--main-bg-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 0.5em;
+  padding: 30px 20px;
+}
+#main-container #calc-container #screen {
+  width: 100%;
+  height: 75px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: rgb(57, 57, 57);
+  margin-bottom: 20px;
+  padding: 0 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 0.1em;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  font-family: "Seven Segment";
+  letter-spacing: 1px;
+  font-size: 50px;
+}
+#main-container .btn-container {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+#main-container .btn-container .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1/1;
+  width: 100%;
+  border-radius: 0.5em;
+  background-color: var(--main-bg-color);
+}
+#main-container .btn-container .btn:hover {
+  cursor: pointer;
+}
+#main-container .btn-container .btn.btn-primary {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+#main-container .btn-container .btn.btn-primary:hover {
+  color: var(--main-bg-color);
+  background-color: var(--primary-color);
+}
+#main-container .btn-container .btn.btn-secondary {
+  color: var(--primary-color);
+  border: 1px solid var(--secondary-color);
+}
+#main-container .btn-container .btn.btn-secondary:hover {
+  color: var(--main-bg-color);
+  background-color: var(--secondary-color);
+}
+#main-container #theme-select {
+  min-width: 320px;
+  height: 80px;
+  background-color: var(--main-bg-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 0.5em;
+  padding: 10px 20px;
+  /* Theme 1 */
+  /* Theme 2 */
+  /* Theme 3 */
+  /* Theme 4 */
+}
+#main-container #theme-select .btn-container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#main-container #theme-select button.theme-1 {
+  background: linear-gradient(to bottom right, transparent calc(50% - 1px), #ff693c calc(50% - 1px), #ff693c, transparent 50%);
+}
+#main-container #theme-select button.theme-1:hover {
+  background: #ff693c;
+}
+#main-container #theme-select button.theme-2 {
+  background: linear-gradient(to bottom right, transparent calc(50% - 1px), #128cb4 calc(50% - 1px), #128cb4, transparent 50%) #dcdcda;
+}
+#main-container #theme-select button.theme-2:hover {
+  background: #128cb4;
+}
+#main-container #theme-select button.theme-3 {
+  background: linear-gradient(to bottom right, transparent calc(50% - 1px), #29E37D calc(50% - 1px), #29E37D, transparent 50%);
+}
+#main-container #theme-select button.theme-3:hover {
+  background: #29E37D;
+}
+#main-container #theme-select button.theme-4 {
+  background: linear-gradient(to bottom right, transparent calc(50% - 1px), #FDB833 calc(50% - 1px), #FDB833, transparent 50%);
+}
+#main-container #theme-select button.theme-4:hover {
+  background: #FDB833;
+}/*# sourceMappingURL=style.css.map */

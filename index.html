@@ -4,47 +4,43 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Calculator</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="static/css/style.css">
     </head>
     <body>
         <div id="main-container">
-            <div class="header">
-                <!-- Blank, used for alinment -->
-            </div>
-            <div id="calculator">
-                <section id="screen-container">
-                    <div id="screen">0</div>
-                </section>
-                <section id="buttons-container">
-                    <div id="buttons">
-                        <button type="button" class="btn calc-btn btn-primary" name="btn-input" value="c">AC</button>
-                        <button type="button" class="btn calc-btn btn-secondary" name="btn-input" value="s">+/-</button>
-                        <button type="button" class="btn calc-btn btn-secondary" name="btn-input" value="p">%</button>
-                        <button type="button" class="btn calc-btn btn-secondary" name="btn-input" value="-">-</button>
-                        <button type="button" class="btn calc-btn btn-primary" name="btn-input" value="7">7</button>
-                        <button type="button" class="btn calc-btn btn-primary" name="btn-input" value="8">8</button>
-                        <button type="button" class="btn calc-btn btn-primary" name="btn-input" value="9">9</button>
-                        <button type="button" class="btn calc-btn btn-secondary" name="btn-input" value="/">/</button>
-                        <button type="button" class="btn calc-btn btn-primary" name="btn-input" value="4">4</button>
-                        <button type="button" class="btn calc-btn btn-primary" name="btn-input" value="5">5</button>
-                        <button type="button" class="btn calc-btn btn-primary" name="btn-input" value="6">6</button>
-                        <button type="button" class="btn calc-btn btn-secondary" name="btn-input" value="*">x</button>
-                        <button type="button" class="btn calc-btn btn-primary" name="btn-input" value="1">1</button>
-                        <button type="button" class="btn calc-btn btn-primary" name="btn-input" value="2">2</button>
-                        <button type="button" class="btn calc-btn btn-primary" name="btn-input" value="3">3</button>
-                        <button type="button" class="btn calc-btn btn-secondary" name="btn-input" value="+">+</button>
-                        <button type="button" class="btn calc-btn btn-primary btn-dbl" name="btn-input" value="0">0</button>
-                        <button type="button" class="btn calc-btn btn-primary" name="btn-input" value=".">.</button>
-                        <button type="button" class="btn calc-btn btn-secondary" name="btn-input" value="=">=</button>
-                    </div>
+            <div id="calc-container">
+                <div id="screen">0</div>
+                <section class="btn-container">
+                    <button type="button" class="btn btn-primary calc-btn" name="btn-input" value="c">AC</button>
+                    <button type="button" class="btn btn-secondary calc-btn" name="btn-input" value="s">+/-</button>
+                    <button type="button" class="btn btn-secondary calc-btn" name="btn-input" value="p">%</button>
+                    <button type="button" class="btn btn-secondary calc-btn" name="btn-input" value="-">-</button>
+                    <button type="button" class="btn btn-primary calc-btn" name="btn-input" value="7">7</button>
+                    <button type="button" class="btn btn-primary calc-btn" name="btn-input" value="8">8</button>
+                    <button type="button" class="btn btn-primary calc-btn" name="btn-input" value="9">9</button>
+                    <button type="button" class="btn btn-secondary calc-btn" name="btn-input" value="/">/</button>
+                    <button type="button" class="btn btn-primary calc-btn" name="btn-input" value="4">4</button>
+                    <button type="button" class="btn btn-primary calc-btn" name="btn-input" value="5">5</button>
+                    <button type="button" class="btn btn-primary calc-btn" name="btn-input" value="6">6</button>
+                    <button type="button" class="btn btn-secondary calc-btn" name="btn-input" value="*">x</button>
+                    <button type="button" class="btn btn-primary calc-btn" name="btn-input" value="1">1</button>
+                    <button type="button" class="btn btn-primary calc-btn" name="btn-input" value="2">2</button>
+                    <button type="button" class="btn btn-primary calc-btn" name="btn-input" value="3">3</button>
+                    <button type="button" class="btn btn-secondary calc-btn" name="btn-input" value="+">+</button>
+                    <button type="button" class="btn btn-primary btn-dbl calc-btn" name="btn-input" value="0">0</button>
+                    <button type="button" class="btn btn-primary calc-btn" name="btn-input" value=".">.</button>
+                    <button type="button" class="btn btn-secondary calc-btn" name="btn-input" value="=">=</button>
                 </section>
             </div>
-            <section id="footer">
-                <button type="button" class="btn btn-primary theme-1" onclick="changeTheme('#242424', '#fafafa', '#ff693c')"></button>
-                <button type="button" class="btn btn-primary theme-2" onclick="changeTheme('#dcdcda', '#242424', '#128cb4')"></button>
-                <button type="button" class="btn btn-primary theme-3" onclick="changeTheme('#242424', '#29E37D', '#E33929')"></button>
+            <section id="theme-select">
+                <div class="btn-container">
+                    <button type="button" class="btn btn-primary theme-1" onclick="changeTheme('#242424', '#fafafa', '#ff693c')"></button>
+                    <button type="button" class="btn btn-primary theme-2" onclick="changeTheme('#dcdcda', '#242424', '#128cb4')"></button>
+                    <button type="button" class="btn btn-primary theme-3" onclick="changeTheme('#242424', '#29E37D', '#E33929')"></button>
+                    <button type="button" class="btn btn-primary theme-4" onclick="changeTheme('#242424', '#FDB833', '#CC5A71')"></button>
+                </div>
             </section>
         </div>
-        <script src="app.js"></script>
+        <script src="static/js/app.js"></script>
     </body>
 </html>
