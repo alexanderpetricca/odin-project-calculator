@@ -60,52 +60,55 @@ body {
             letter-spacing: 1px;
             font-size: 50px;
         }
+
+        .btn-container {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            gap: 10px;
+    
+            .btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 0.5em;
+                background-color: var(--main-bg-color);
+                
+                &.btn-dbl {
+                    grid-column: span 2;
+                }
+    
+                &:hover {
+                    cursor: pointer;
+                }
+                
+                &.btn-primary {
+                    color: var(--primary-color);
+                    border: 1px solid var(--primary-color);
+    
+                    &:hover {
+                        color: var(--main-bg-color);
+                        background-color: var(--primary-color);
+                        
+                    }                    
+                }
+    
+                &.btn-secondary {
+                    color: var(--primary-color);
+                    border: 1px solid var(--secondary-color);
+    
+                    &:hover {
+                        color: var(--main-bg-color);
+                        background-color: var(--secondary-color);
+                        
+                    }                    
+                }                
+            }       
+        }           
     }
 
-    .btn-container {
-        flex: 1;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
-
-        .btn {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            aspect-ratio: 1 / 1;
-            width: 100%;
-            border-radius: 0.5em;
-            background-color: var(--main-bg-color);
-            
-            &:hover {
-                cursor: pointer;
-            }
-            
-            &.btn-primary {
-                color: var(--primary-color);
-                border: 1px solid var(--primary-color);
-
-                &:hover {
-                    color: var(--main-bg-color);
-                    background-color: var(--primary-color);
-                    
-                }                    
-            }
-
-            &.btn-secondary {
-                color: var(--primary-color);
-                border: 1px solid var(--secondary-color);
-
-                &:hover {
-                    color: var(--main-bg-color);
-                    background-color: var(--secondary-color);
-                    
-                }                    
-            }                
-        }
-    }   
-    
-    #theme-select {
+    #theme-select {       
         min-width: 320px;
         height: 80px;
         background-color: var(--main-bg-color);
@@ -115,9 +118,32 @@ body {
 
         .btn-container {
             height: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+
+            .btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 0.5em;
+                background-color: var(--main-bg-color);
+                
+                &:hover {
+                    cursor: pointer;
+                }
+                
+                &.btn-primary {
+                    color: var(--primary-color);
+                    border: 1px solid var(--primary-color);
+    
+                    &:hover {
+                        color: var(--main-bg-color);
+                        background-color: var(--primary-color);
+                        
+                    }                    
+                }           
+            }
         }
         
         /* Theme 1 */

@@ -1,7 +1,6 @@
 // https://www.theodinproject.com/lessons/foundations-calculator
 
 
-
 const screen = document.querySelector('#screen');  
 
 let displayValue = null;

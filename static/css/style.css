@@ -58,37 +58,39 @@ body {
   letter-spacing: 1px;
   font-size: 50px;
 }
-#main-container .btn-container {
+#main-container #calc-container .btn-container {
   flex: 1;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   gap: 10px;
 }
-#main-container .btn-container .btn {
+#main-container #calc-container .btn-container .btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  aspect-ratio: 1/1;
-  width: 100%;
   border-radius: 0.5em;
   background-color: var(--main-bg-color);
 }
-#main-container .btn-container .btn:hover {
+#main-container #calc-container .btn-container .btn.btn-dbl {
+  grid-column: span 2;
+}
+#main-container #calc-container .btn-container .btn:hover {
   cursor: pointer;
 }
-#main-container .btn-container .btn.btn-primary {
+#main-container #calc-container .btn-container .btn.btn-primary {
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
 }
-#main-container .btn-container .btn.btn-primary:hover {
+#main-container #calc-container .btn-container .btn.btn-primary:hover {
   color: var(--main-bg-color);
   background-color: var(--primary-color);
 }
-#main-container .btn-container .btn.btn-secondary {
+#main-container #calc-container .btn-container .btn.btn-secondary {
   color: var(--primary-color);
   border: 1px solid var(--secondary-color);
 }
-#main-container .btn-container .btn.btn-secondary:hover {
+#main-container #calc-container .btn-container .btn.btn-secondary:hover {
   color: var(--main-bg-color);
   background-color: var(--secondary-color);
 }
@@ -106,9 +108,27 @@ body {
 }
 #main-container #theme-select .btn-container {
   height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+#main-container #theme-select .btn-container .btn {
   display: flex;
-  flex-direction: row;
   justify-content: center;
+  align-items: center;
+  border-radius: 0.5em;
+  background-color: var(--main-bg-color);
+}
+#main-container #theme-select .btn-container .btn:hover {
+  cursor: pointer;
+}
+#main-container #theme-select .btn-container .btn.btn-primary {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+#main-container #theme-select .btn-container .btn.btn-primary:hover {
+  color: var(--main-bg-color);
+  background-color: var(--primary-color);
 }
 #main-container #theme-select button.theme-1 {
   background: linear-gradient(to bottom right, transparent calc(50% - 1px), #ff693c calc(50% - 1px), #ff693c, transparent 50%);
